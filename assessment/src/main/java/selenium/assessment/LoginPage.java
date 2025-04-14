@@ -6,11 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class loginPage {
+public class LoginPage {
 	
 WebDriver driver;
 	
-	public loginPage(WebDriver driver)
+	public LoginPage(WebDriver driver)
 	{
 		//initialization
 		this.driver=driver;
@@ -34,13 +34,13 @@ WebDriver driver;
 	@FindBy(linkText="Edit account details")
 	WebElement editAcc;
 
-	public accountPage loginPage(String email, String password) {
+	public AccountPage loginPage(String email, String password) {
 		loginButton.click();
 		userEmail.sendKeys(email);
 		userPass.sendKeys(password);
 		submit.click();
 		editAcc.click();
-		accountPage accountPage = new accountPage(driver);
+		AccountPage accountPage = new AccountPage(driver);
 		return accountPage;
 	}
 	

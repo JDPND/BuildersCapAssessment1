@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class loginPageTests {
+public class BasicTestScript {
 	
 	@Test
 	public void basicTestScript() {
@@ -22,9 +22,9 @@ public class loginPageTests {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
-		loginPage loginPage = new loginPage(driver);
+		LoginPage loginPage = new LoginPage(driver);
 		loginPage.websiteURL();
-		accountPage accountPage = loginPage.loginPage("jdpnd", "Automation1234$");
+		AccountPage accountPage = loginPage.loginPage("jdpnd", "Automation1234$");
 		
 		accountPage.positiveEmail();
 		String successMessage = accountPage.getSuccess();
